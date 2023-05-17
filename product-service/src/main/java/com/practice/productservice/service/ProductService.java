@@ -11,7 +11,6 @@ public interface ProductService {
 
     List<Product> getAllProduct();
 
-
     ProductResponse getById(Integer prodId);
 
     void reduceQuantity(Integer prodId, Integer quantity);

@@ -22,11 +22,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Integer addProduct(ProductDTO dto) {
-        Product product = Product.builder()
-                .prodName(dto.getProdName())
-                .price(dto.getPrice())
-                .quantity(dto.getQuantity())
-                .build();
+        Product product = Product.builder().prodName(dto.getProdName()).price(dto.getPrice()).quantity(dto.getQuantity()).build();
         Integer prodId = productRepository.save(product).getProdId();
         log.info("Product Created");
         return prodId;
@@ -34,7 +30,7 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<Product> getAllProduct() {
-        return null;
+        return productRepository.findAll();
     }
 
     @Override

@@ -17,19 +17,19 @@ public class ProductController {
     private ProductService productService;
 
     @PostMapping("/add")
-    public ResponseEntity<Integer> addProduct(@RequestBody ProductDTO dto){
-        Integer prodId=productService.addProduct(dto);
+    public ResponseEntity<Integer> addProduct(@RequestBody ProductDTO dto) {
+        Integer prodId = productService.addProduct(dto);
         return new ResponseEntity<>(prodId, HttpStatus.CREATED);
     }
-    @GetMapping("/{prodId}")
-    public ResponseEntity<ProductResponse> getById(@PathVariable("prodId") Integer prodId){
-        ProductResponse response=productService.getById(prodId);
 
+    @GetMapping("/{prodId}")
+    public ResponseEntity<ProductResponse> getById(@PathVariable("prodId") Integer prodId) {
+        ProductResponse response = productService.getById(prodId);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 
     @PutMapping("/reducequanity/{prodId}")
-    public ResponseEntity<Void> reduceQuantity(@PathVariable("prodId") Integer prodId, @RequestParam Integer quantity){
+    public ResponseEntity<Void> reduceQuantity(@PathVariable("prodId") Integer prodId, @RequestParam Integer quantity) {
         log.info("Reduced Quantity Controller quantity {} with id {}", quantity, prodId);
         productService.reduceQuantity(prodId, quantity);
         return new ResponseEntity<>(HttpStatus.OK);
