@@ -67,8 +67,4 @@ class ProductServiceTest {
         assertEquals("INSUFFICIENT_QUANTITY", ex.getErrorCode());
     }
 
-    @Test
-    public void testReduceQuantityInsufficientQuantity() {
-
-    }
 }

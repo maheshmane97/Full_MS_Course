@@ -23,11 +23,6 @@ class ProductControllerTest {
     @MockBean
     private ProductService productService;
 
-    @BeforeEach
-    void setUp() {
-//        ProductService productService=Mockito.mock(ProductService.class);
-    }
-
     @Test
     void addProduct() {
         ProductDTO dto = new ProductDTO("Samsung", 10000, 2);
